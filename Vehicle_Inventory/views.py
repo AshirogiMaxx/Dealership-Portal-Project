@@ -15,7 +15,19 @@ def hello_world(request):
             cars.lot = request.POST.get('lot')
             cars.save()
             return render(request, 'hello_world.html', {})
+            
     return render(request, 'hello_world.html', {})
+            
+        
+def car_detail(request, pk):
+    try:
+        car = Cars.objects.get(pk=pk)
+    except Cars.DoesNotExist:
+        return HttpResponse(status=404) 
+        
+    if request.method == 'GET':
+        serializer = CarsSerializer(car)
+        return serializer.data
 
 class ListCarView(generics.ListAPIView):
     """

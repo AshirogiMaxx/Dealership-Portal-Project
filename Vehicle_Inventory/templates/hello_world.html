@@ -7,15 +7,12 @@
 <h1>Car Dealership </h1>
 <form action="" method="POST">
 	{% csrf_token %}
-	Maker: <input type="text" name="maker"/><br/>
-	Model: <input type="text" name="model"/><br/>
+	Maker: <input type="text" name="maker"/>   Model: <input type="text" name="model"/><br/><br/>
 	Description: <br/>
 	<textarea cols="35" rows="8" name="description">
-	</textarea><br/>
-	Color: <input type="text" name="color"/><br/>
-	Doors: <input type="number" name="doors"/><br/>
-	Lot #: <input type="number" name="lot"/><br/>
-	<input type="submit" value="Post"/>
+	</textarea><br/><br/>
+	Color: <input type="text" name="color"/>  Doors: <input type="number" name="doors"/>  Lot #: <input type="number" name="lot"/><br><br/>
+	<input type="submit" value="Add new car"/>
 </form>
 </body>
 
