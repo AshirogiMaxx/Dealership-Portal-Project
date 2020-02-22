@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>Car Dealership </title>
+</head>
+
+<body>
+<h1>Car Dealership </h1>
+<form action="" method="POST">
+	{% csrf_token %}
+	Maker: <input type="text" name="maker"/><br/>
+	Model: <input type="text" name="model"/><br/>
+	Description: <br/>
+	<textarea cols="35" rows="8" name="description">
+	</textarea><br/>
+	Color: <input type="text" name="color"/><br/>
+	Doors: <input type="number" name="doors"/><br/>
+	Lot #: <input type="number" name="lot"/><br/>
+	<input type="submit" value="Post"/>
+</form>
+</body>
+
+</html>
