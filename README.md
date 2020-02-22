@@ -46,4 +46,6 @@ Access the project path at **http://127.0.0.1::8000/v1/**
 
 Access the Django Administration page at: **http://127.0.0.1:8000/admin/** and type in the admin user and password
 
+Access the Django Rest framework API endpoint **http://127.0.0.1:8000/v1/portal/vehicles**
+
 
