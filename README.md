@@ -3,8 +3,8 @@ Dealership Portal Project
 create the project directory 
 
 ```bash
-mkdir rp-portfolio
-cd rp-portfolio
+mkdir Dealership
+cd Dealership
 ```
 
 Clone the repository to your local machine:
