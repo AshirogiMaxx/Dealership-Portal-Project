@@ -1,9 +1,22 @@
 from django.shortcuts import render
 from rest_framework import generics
+from rest_framework.response import Response
+from rest_framework.views import status
 from .models import Cars
 from .serializers import CarsSerializer
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.renderers import JSONRenderer
+from rest_framework.parsers import JSONParser
 
-def hello_world(request):
+
+class JSONResponse(HttpResponse):
+    def __init__(self, data, **kwargs):
+        content = JSONRenderer().render(data)
+        kwargs['content_type'] = 'application/json'
+        super(JSONResponse, self).__init__(content, **kwargs)
+
+def add_car(request):
     if request.method == 'POST':
         if request.POST.get('maker') or request.POST.get('model') or request.POST.get('description') or request.POST.get('color') or request.POST.get('doors') or request.POST.get('lot'):
             cars=Cars()
@@ -14,20 +27,17 @@ def hello_world(request):
             cars.doors = request.POST.get('doors')
             cars.lot = request.POST.get('lot')
             cars.save()
-            return render(request, 'hello_world.html', {})
+            #return render(request, 'add_new_car.html', {})
             
-    return render(request, 'hello_world.html', {})
+    return render(request, 'add_new_car.html', {})
             
         
-def car_detail(request, pk):
-    try:
-        car = Cars.objects.get(pk=pk)
-    except Cars.DoesNotExist:
-        return HttpResponse(status=404) 
-        
+def car_details(request, pk):
     if request.method == 'GET':
+        car = Cars.objects.get(pk=pk)
         serializer = CarsSerializer(car)
-        return serializer.data
+        print(serializer.data)
+        return JSONResponse(serializer.data)
 
 class ListCarView(generics.ListAPIView):
     """

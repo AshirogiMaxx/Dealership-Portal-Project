@@ -4,5 +4,6 @@ from .views import *
 
 urlpatterns = [
     path('portal/vehicles', ListCarView.as_view(), name='Cars'),
-    path('', hello_world, name='hello_world')
+    path('', add_car, name='add_new_car'),
+    path('car/<int:pk>/', car_details)
 ]
