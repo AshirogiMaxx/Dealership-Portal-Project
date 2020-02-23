@@ -8,7 +8,7 @@ Make sure you have installed python3.7 on your machine can be downloaded from:
 
 https://www.python.org/downloads/release/python-370/
 
-Set enviromental environment 
+Set environment 
 
 ```bash
 python3 -m venv venv
@@ -48,7 +48,7 @@ Start the Django server
 python manage.py runserver
 ```
 
-Access the project path at **http://127.0.0.1::8000/v1/**
+Access the project path at **http://127.0.0.1:8000/v1/**
 
 Access the Django Administration page at: **http://127.0.0.1:8000/admin/** and type in the admin user and password
 
