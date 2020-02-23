@@ -1,11 +1,12 @@
-Dealership Portal Project
+#Dealership Portal Project
 
-create the project directory 
 
-```bash
-mkdir Dealership
-cd Dealership
-```
+[![Python Version](https://img.shields.io/badge/python-3.7-brightgreen.svg)](https://python.org)
+[![Django Version](https://img.shields.io/badge/django-2.2.7-brightgreen.svg)](https://djangoproject.com)
+
+Make sure you have installed python3.7 on your machine can be downloaded from:
+
+https://www.python.org/downloads/release/python-370/
 
 Set enviromental environment 
 
@@ -19,17 +20,22 @@ Clone the repository to your local machine:
 git clone https://github.com/AshirogiMaxx/Dealership-Portal-Project.git
 ```
 
+Access the project directory 
+
+```bash
+cd /Dealership-Portal-Project
+```
+
 Install the reqirements 
 ```bash
-pip install requests
-pip install Django=2.2.7
+pip install Django==2.2.7
 pip install djangorestframework
 ```
 
 Create the database
 ```bash
-manage.py makemigrations series
-manage.py migrate  
+python manage.py makemigrations
+python manage.py migrate
 ```
 
 Create admin user and input username, email and password
