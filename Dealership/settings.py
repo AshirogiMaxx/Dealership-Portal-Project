@@ -56,7 +56,7 @@ ROOT_URLCONF = 'Dealership.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -83,8 +83,10 @@ DATABASES = {
 }
 
 AUTHENTICATION_BACKENDS = [
+    #'django_auth_ldap.backend.LDAPBackend', required for configure LDAP SERVER
     'django.contrib.auth.backends.ModelBackend'
 ]
+#AUTH_LDAP_1_SERVER_URI = "ldap://ldap1.example.com"  LDAP server address
 
 
 # Password validation
@@ -105,6 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LOGIN_REDIRECT_URL = '/v1'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/

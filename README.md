@@ -1,4 +1,4 @@
-#Dealership Portal Project
+##Dealership Portal Project
 
 
 [![Python Version](https://img.shields.io/badge/python-3.7-brightgreen.svg)](https://python.org)
@@ -8,7 +8,7 @@ Make sure you have installed python3.7 on your machine can be downloaded from:
 
 https://www.python.org/downloads/release/python-370/
 
-Set environment 
+Set the environment 
 
 ```bash
 python3 -m venv venv
@@ -26,7 +26,7 @@ Access the project directory
 cd /Dealership-Portal-Project
 ```
 
-Install the reqirements 
+Install the requirements 
 ```bash
 pip install Django==2.2.7
 pip install djangorestframework
@@ -51,6 +51,8 @@ python manage.py runserver
 Access the project path at **http://127.0.0.1:8000/v1/**
 
 Access the Django Administration page at: **http://127.0.0.1:8000/admin/** and type in the admin user and password
+
+Access users created under the admin page **http://127.0.0.1:8000/v1/accounts/login/**
 
 Access the Django Rest framework API endpoint **http://127.0.0.1:8000/v1/portal/vehicles**
 

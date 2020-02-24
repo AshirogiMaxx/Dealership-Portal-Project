@@ -27,7 +27,6 @@ def add_car(request):
             cars.doors = request.POST.get('doors')
             cars.lot = request.POST.get('lot')
             cars.save()
-            #return render(request, 'add_new_car.html', {})
             
     return render(request, 'add_new_car.html', {})
             
@@ -36,7 +35,6 @@ def car_details(request, pk):
     if request.method == 'GET':
         car = Cars.objects.get(pk=pk)
         serializer = CarsSerializer(car)
-        print(serializer.data)
         return JSONResponse(serializer.data)
 
 class ListCarView(generics.ListAPIView):
